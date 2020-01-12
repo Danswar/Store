@@ -32,7 +32,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $product = $request->isMethod('put') ? 
+            Product::findOrFail($request->id) : new Product;
+
+        $product->id = $request->input('id');
+        $product->codigo = $request->input('codigo');
+        $product->nombre = $request->input('nombre');
+        $product->stock = $request->input('stock');
+        $product->stock_min = $request->input('stock_min');
+        $product->p_costo = $request->input('p_costo');
+        $product->p_costo_usd = $request->input('p_costo_usd');
+        $product->p_venta = $request->input('p_venta');
+        $product->p_venta_usd = $request->input('p_venta_usd');
+        $product->margen_min = $request->input('margen_min');
+        $product->dolar_base = $request->input('dolar_base');
         
+        if($product->save()){
+            return new ProductResource($product);
+        }
+
     }
 
     /**
@@ -72,6 +90,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $product = Product::findOrFail($id);
+
+        if($product->delete()){
+            return new ProductResource( $product );
+        }
+        
     }
 }
