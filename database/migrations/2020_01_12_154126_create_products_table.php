@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('codigo')->unsigned()->unique()->nullable();
+            $table->string('codigo')->unique()->nullable();
             $table->string('nombre');
             $table->integer('stock')->nullable()->default(1);
             $table->integer('stock_min')->nullable();
