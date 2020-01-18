@@ -18,13 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //List the products
-Route::get('products', 'ProductController@index');
+
 
 //List single product
 Route::get('product/{id}', 'ProductController@show');
 
-//Create new product
-Route::post('product',  'ProductController@store');
+
+    Route::get('products', 'ProductController@index');
+    //Create new product
+    Route::post('product',  'ProductController@store');
+
 
 //Update product
 Route::put('product', 'ProductController@store');

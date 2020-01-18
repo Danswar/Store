@@ -15,7 +15,6 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'p_costo'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 10000),
         'p_costo_usd'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 50),
         'p_venta'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 10000),
-        'p_venta_usd'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 50),
         'margen_min'=>$faker->numberBetween(25,40),
         'dolar_base'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 500)
     ];

@@ -23,7 +23,6 @@ class CreateProductsTable extends Migration
             $table->double('p_costo')->default(1);
             $table->double('p_costo_usd')->default(1);
             $table->double('p_venta')->default(1);
-            $table->double('p_venta_usd')->default(1);
             $table->double('margen_min')->default(30);
             $table->double('dolar_base')->default(1);
             $table->timestamps();

@@ -35,17 +35,17 @@ class ProductController extends Controller
         $product = $request->isMethod('put') ? 
             Product::findOrFail($request->id) : new Product;
 
-        $product->id = $request->input('id');
-        $product->codigo = $request->input('codigo');
-        $product->nombre = $request->input('nombre');
-        $product->stock = $request->input('stock');
-        $product->stock_min = $request->input('stock_min');
-        $product->p_costo = $request->input('p_costo');
-        $product->p_costo_usd = $request->input('p_costo_usd');
-        $product->p_venta = $request->input('p_venta');
-        $product->p_venta_usd = $request->input('p_venta_usd');
-        $product->margen_min = $request->input('margen_min');
-        $product->dolar_base = $request->input('dolar_base');
+        
+        $product->id = $request->json('id');
+        $product->codigo = $request->json('codigo');
+        $product->nombre = $request->json('nombre');
+        $product->stock = $request->json('stock');
+        $product->stock_min = $request->json('stock_min');
+        $product->p_costo = $request->json('p_costo');
+        $product->p_costo_usd = $request->json('p_costo_usd');
+        $product->p_venta = $request->json('p_venta');
+        $product->margen_min = $request->json('margen_min');
+        $product->dolar_base = $request->json('dolar_base');
         
         if($product->save()){
             return new ProductResource($product);
