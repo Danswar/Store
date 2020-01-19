@@ -32,20 +32,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = $request->isMethod('put') ? 
-            Product::findOrFail($request->id) : new Product;
+        
+        
+        $product = $request->json('id')!=="" ? 
+            Product::findOrFail( $request->json('id')) : new Product;
 
         
-        $product->id = $request->json('id');
-        $product->codigo = $request->json('codigo');
-        $product->nombre = $request->json('nombre');
-        $product->stock = $request->json('stock');
-        $product->stock_min = $request->json('stock_min');
-        $product->p_costo = $request->json('p_costo');
-        $product->p_costo_usd = $request->json('p_costo_usd');
-        $product->p_venta = $request->json('p_venta');
-        $product->margen_min = $request->json('margen_min');
-        $product->dolar_base = $request->json('dolar_base');
+        $product->id = $request->json('id')==="" ? NULL : $request->json('id'); 
+        $product->codigo = $request->json('codigo') ==="" ? NULL : $request->json('codigo');
+        $product->nombre = $request->json('nombre') ==="" ? NULL : $request->json('nombre');
+        $product->stock = $request->json('stock') ==="" ? NULL :  $request->json('stock');
+        $product->stock_min = $request->json('stock_min') ==="" ? NULL : $request->json('stock_min');
+        $product->p_costo = $request->json('p_costo') ==="" ? NULL : $request->json('p_costo');
+        $product->p_costo_usd = $request->json('p_costo_usd') ==="" ? NULL : $request->json('p_costo_usd');
+        $product->p_venta = $request->json('p_venta') ==="" ? NULL : $request->json('p_venta');
+        $product->margen_min = $request->json('margen_min') ==="" ? NULL : $request->json('margen_min');
+        $product->dolar_base = $request->json('dolar_base') ==="" ? NULL : $request->json('dolar_base');
         
         if($product->save()){
             return new ProductResource($product);
@@ -70,17 +72,6 @@ class ProductController extends Controller
 
     
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

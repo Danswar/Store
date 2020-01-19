@@ -13,21 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-//List the products
-
+ */
 
 //List single product
 Route::get('product/{id}', 'ProductController@show');
 
+Route::get('products', 'ProductController@index');
 
-    Route::get('products', 'ProductController@index');
-    //Create new product
-    Route::post('product',  'ProductController@store');
-
+//Create new product
+Route::post('product',  'ProductController@store');
 
 //Update product
 Route::put('product', 'ProductController@store');
