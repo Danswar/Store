@@ -1,0 +1,4 @@
+20/01/2020----------------------
+- empezamos este log, los registros anteriores estan en el cliente Dulcelina
+- implementados los softdeletes para el modelo product
+- la ruta de Delete se cambio a verbo Post para evitar el Cors
