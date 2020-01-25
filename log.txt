@@ -1,3 +1,6 @@
+24/01/2020----------------------
+- el campo nombre los productos se convierte a mayusculas
+
 20/01/2020----------------------
 - empezamos este log, los registros anteriores estan en el cliente Dulcelina
 - implementados los softdeletes para el modelo product
