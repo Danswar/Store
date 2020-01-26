@@ -1,3 +1,6 @@
+25/01/2020----------------------
+- Version en produccion bajo este dominio: https://store-app-back.000webhostapp.com/
+
 24/01/2020----------------------
 - el campo nombre los productos se convierte a mayusculas
 
