@@ -1,3 +1,9 @@
+27/01/2020----------------------
+- creadas migraciones de las tablas sells y items para manejar el registrpo de ventas
+- creados los modelos para items y sells
+- modelos para las tablas items y sells realcionados para funcionar con Eloquent
+- TODO: crear los seeders y factorys para hacer pruebas
+
 25/01/2020----------------------
 - Version en produccion bajo este dominio: https://store-app-back.000webhostapp.com/
 
