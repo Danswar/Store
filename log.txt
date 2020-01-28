@@ -3,6 +3,8 @@
 - creados los modelos para items y sells
 - modelos para las tablas items y sells realcionados para funcionar con Eloquent
 - creado el seeder y factory para hacer pruebas
+- creado el controler de sell y la ruta index
+- creado un resource para sell
 
 25/01/2020----------------------
 - Version en produccion bajo este dominio: https://store-app-back.000webhostapp.com/
