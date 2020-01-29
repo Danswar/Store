@@ -1,3 +1,19 @@
+29/01/2020----------------------
+- las rutas de tipo [entidad]/{id} solo aceptan numeros
+- las ventas estan paginadas y ordenadas por fecha de creacion
+
+28/01/2020----------------------
+- creada ruta para show para sell, devuelve todos los detalles de la ventas
+- creada ruta para store una sell, devuelve lo guardado o hace rollback si falla
+
+27/01/2020----------------------
+- creadas migraciones de las tablas sells y items para manejar el registrpo de ventas
+- creados los modelos para items y sells
+- modelos para las tablas items y sells realcionados para funcionar con Eloquent
+- creado el seeder y factory para hacer pruebas
+- creado el controler de sell y la ruta index
+- creado un resource para sell
+
 25/01/2020----------------------
 - Version en produccion bajo este dominio: https://store-app-back.000webhostapp.com/
 
