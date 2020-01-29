@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
  */
 
 //List single product
-Route::get('product/{id}', 'ProductController@show');
+Route::get('product/{id}', 'ProductController@show')->where('id', '[0-9]+');
 
 Route::get('products', 'ProductController@index');
 
@@ -35,6 +35,6 @@ Route::post('product/{id}', 'ProductController@destroy');
 
 Route::get('sells', 'SellController@index');
 
-Route::get('sell/{id}', 'SellController@show');
+Route::get('sell/{id}', 'SellController@show')->where('id', '[0-9]+');
 
 Route::post('sell', 'SellController@store');

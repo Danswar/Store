@@ -18,7 +18,7 @@ class SellController extends Controller
      */
     public function index()
     {
-        $sells = Sell::all();
+        $sells = Sell::orderBy('created_at','desc')->paginate(15);
         return SellResource::collection($sells);
     }
 
