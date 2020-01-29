@@ -34,3 +34,7 @@ Route::post('product/{id}', 'ProductController@destroy');
 
 
 Route::get('sells', 'SellController@index');
+
+Route::get('sell/{id}', 'SellController@show');
+
+Route::post('sell', 'SellController@store');

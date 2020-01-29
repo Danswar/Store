@@ -1,3 +1,7 @@
+28/01/2020----------------------
+- creada ruta para show para sell, devuelve todos los detalles de la ventas
+- creada ruta para store una sell, devuelve lo guardado o hace rollback si falla
+
 27/01/2020----------------------
 - creadas migraciones de las tablas sells y items para manejar el registrpo de ventas
 - creados los modelos para items y sells
