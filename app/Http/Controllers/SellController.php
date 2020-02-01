@@ -72,7 +72,10 @@ class SellController extends Controller
     public function show($id)
     {
         $sell = Sell::find($id);
-        $sell->items;
+        //cargamos tambien los items de la venta y el producto asociado
+        foreach($sell->items as $item){
+            $item->name;
+        }
         return new SellResource($sell);
     }
 

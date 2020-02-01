@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
+
+	public function getNameAttribute()
+	{
+		return $this->product->nombre;
+  }
+  
   public function product(){
-		return $this->hasOne('App\Product');
+		return $this->belongsTo('App\Product');
 	}
 
   public function sell(){
