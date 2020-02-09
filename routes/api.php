@@ -38,3 +38,17 @@ Route::get('sells', 'SellController@index');
 Route::get('sell/{id}', 'SellController@show')->where('id', '[0-9]+');
 
 Route::post('sell', 'SellController@store');
+
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});
