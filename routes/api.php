@@ -52,3 +52,10 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+Route::group(['middleware' => ['jwt.verify','api']], function() {
+        Route::get('testToken', function(){
+            return "Hola test Token";
+        });
+});
+
