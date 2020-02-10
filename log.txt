@@ -1,3 +1,6 @@
+10/02/2020----------------------
+- VERSION EN PRODUCCION
+
 31/01/2020----------------------
 - las ruta de venta especifica devuelve el producto asociado a cada item
 
