@@ -37,4 +37,6 @@ Route::get('sells', 'SellController@index');
 
 Route::get('sell/{id}', 'SellController@show')->where('id', '[0-9]+');
 
+Route::post('sell/cancel/{id}', 'SellController@cancel')->where('id', '[0-9]+');
+
 Route::post('sell', 'SellController@store');
