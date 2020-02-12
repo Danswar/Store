@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Sell;
 use App\Item;
+use App\Product;
 use App\Http\Resources\Sell as SellResource;
 
 class SellController extends Controller
@@ -47,8 +48,12 @@ class SellController extends Controller
                 $item->p_costo = $reqItem['p_costo'];
                 $item->p_costo_usd = $reqItem['p_costo_usd'];
                 $item->p_venta = $reqItem['p_venta'];
-                
                 $item->save();
+
+                $product = Product::find($item->product_id);
+                $product->stock = $product->stock - $item->cantidad;
+                $product->save();
+
             }
             DB::commit();
 
@@ -79,12 +84,22 @@ class SellController extends Controller
         return new SellResource($sell);
     }
 
+
     public function today(){
         $sells = Sell::whereDate('created_at', '=', date('Y-m-d'))->get();
         foreach($sells as $sell){
             $sell->items;
         }
         return SellResource::collection($sells);
+    }
+  
+    public function cancel($id)
+    {
+        $sell = Sell::find($id);
+        $sell->anulado = true;
+        $sell->save();
+
+        return new SellResource($sell);
     }
 
 
