@@ -84,6 +84,15 @@ class SellController extends Controller
         return new SellResource($sell);
     }
 
+
+    public function today(){
+        $sells = Sell::whereDate('created_at', '=', date('Y-m-d'))->get();
+        foreach($sells as $sell){
+            $sell->items;
+        }
+        return SellResource::collection($sells);
+    }
+  
     public function cancel($id)
     {
         $sell = Sell::find($id);

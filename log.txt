@@ -1,3 +1,6 @@
+11/02/2020----------------------
+- agregada ruta para ventas diarias
+
 10/02/2020----------------------
 - agregada funcionalidad completa para anular una venta
 - al procesar una venta se actualiza el stock del producto particular
