@@ -38,3 +38,5 @@ Route::get('sells', 'SellController@index');
 Route::get('sell/{id}', 'SellController@show')->where('id', '[0-9]+');
 
 Route::post('sell', 'SellController@store');
+
+Route::get('sells/today', 'SellController@today');
