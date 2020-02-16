@@ -1,3 +1,6 @@
+16/02/2020----------------------
+- cambio de la zona horaria America/caracas
+
 11/02/2020----------------------
 - agregada ruta para ventas diarias
 

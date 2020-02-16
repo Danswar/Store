@@ -86,6 +86,7 @@ class SellController extends Controller
 
 
     public function today(){
+        date_default_timezone_set('America/Argentina/Buenos_Aires'); 
         $sells = Sell::whereDate('created_at', '=', date('Y-m-d'))->get();
         foreach($sells as $sell){
             $sell->items;
