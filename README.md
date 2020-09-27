@@ -6,15 +6,55 @@ The aplication runs into a docker container make easy to seting up all dev envir
 
 - Clone using:
 ```
-git clone https://github.com/Danswar/Store.git
+git clone --recurse-submodules https://github.com/Danswar/Store.git
 cd Store
 ```
-- Rename example_laradocks.env as .env, you can use:
+- Rename example_dev.env as .env, you can use:
 ```
-cp example_laradocks.env .env
+cp example_dev.env .env
+```
+- Copy example_for_laradock.env to /laradock folder:
+
+- Go to /laradock folder and rename example_for_laradock.env as .env: you can use
+```
+cd laradock
+cp example_for_laradock.env .env
 ```
 
-- Go to laradock folder and rename 
+- Run the container using this command :
+```
+docker-compose up -d nginx mysql phpmyadmin
+```
+This can take a while the first time. Also you can stop the container using
+
+```
+docker-compose up -d down
+```
+
+- Once the container is runnig, get a console bash on container using:
+```
+docker-compose exec workspace bash
+```
+
+- Install all dependencies for proyect running composer command:
+```
+composer install
+```
+
+- Once all dependencies have been installed, run migrations using:
+```
+php artisan migrate:fresh
+```
+
+- Now you can exit from bash using:
+```
+exit
+```
+
+- The application is available on http://localhost
+
+- phpMyAdmin is http://localhost:8081 with server: mysql, user: root, password: root
+
 
 
 ## About Laravel
