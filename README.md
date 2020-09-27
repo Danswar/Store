@@ -1,11 +1,21 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Store: Laravel backend aplication to serve data to Dulcelina - Adminstrador App
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## How to seting up dev enviroment
+
+The aplication runs into a docker container make easy to seting up all dev enviroment. You'll need docker intalled on your local machine https://www.docker.com/products/docker/
+
+- Clone using:
+```
+git clone https://github.com/Danswar/Store.git
+cd Store
+```
+- Rename example_laradocks.env as .env, you can use:
+```
+cp example_laradocks.env .env
+```
+
+- Go to laradock folder and rename 
+
 
 ## About Laravel
 
