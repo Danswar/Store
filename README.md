@@ -1,4 +1,4 @@
-# Store: Laravel backend aplication to serve data to Dulcelina - Adminstrador App
+# Store: Laravel backend application to serve data to Dulcelina - Adminstrador App
 
 ## How to seting up dev enviroment
 
