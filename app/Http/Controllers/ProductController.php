@@ -46,7 +46,6 @@ class ProductController extends Controller
         $product->p_costo = $request->json('p_costo') ==="" ? NULL : $request->json('p_costo');
         $product->p_costo_usd = $request->json('p_costo_usd') ==="" ? NULL : $request->json('p_costo_usd');
         $product->p_venta = $request->json('p_venta') ==="" ? NULL : $request->json('p_venta');
-        $product->margen_min = $request->json('margen_min') ==="" ? NULL : $request->json('margen_min');
         $product->dolar_base = $request->json('dolar_base') ==="" ? NULL : $request->json('dolar_base');
         
         if($product->save()){
