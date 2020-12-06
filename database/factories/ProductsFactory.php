@@ -7,7 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Product::class, function (Faker $faker) {
     return [
-        'codigo'=> $faker->bothify('???#########?#?#?'),
         'nombre'=> $faker->text(50),
         'stock'=> $faker->numberBetween($min = 20, $max = 100),
         'stock_min'=> $faker->numberBetween($min = 1, $max = 30),
