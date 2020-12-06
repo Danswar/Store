@@ -37,6 +37,8 @@ class SellController extends Controller
         try{
             $sell = new Sell;
             $sell->total = $request->json('total');
+            $sell->totalUsd = $request->json('totalUsd');
+            $sell->dolarRef = $request->json('dolarRef');
             $sell->save();
 
             $items = $request->json('items');
@@ -48,6 +50,7 @@ class SellController extends Controller
                 $item->p_costo = $reqItem['p_costo'];
                 $item->p_costo_usd = $reqItem['p_costo_usd'];
                 $item->p_venta = $reqItem['p_venta'];
+                $item->p_venta_usd = $reqItem['p_venta_usd'];
                 $item->save();
 
                 $product = Product::find($item->product_id);

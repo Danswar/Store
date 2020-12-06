@@ -43,8 +43,7 @@ class ProductController extends Controller
         $product->stock_min = $request->json('stock_min') ==="" ? NULL : $request->json('stock_min');
         $product->p_costo = $request->json('p_costo') ==="" ? NULL : $request->json('p_costo');
         $product->p_costo_usd = $request->json('p_costo_usd') ==="" ? NULL : $request->json('p_costo_usd');
-        $product->p_venta = $request->json('p_venta') ==="" ? NULL : $request->json('p_venta');
-        $product->p_venta = $request->json('p_venta_usd') ==="" ? NULL : $request->json('p_venta_usd');
+        $product->p_venta_usd = $request->json('p_venta_usd') ==="" ? NULL : $request->json('p_venta_usd');
         
         if($product->save()){
             return new ProductResource($product);
