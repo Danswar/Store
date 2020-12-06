@@ -37,15 +37,14 @@ class ProductController extends Controller
         $product = $request->json('id')!=="" ? 
             Product::findOrFail( $request->json('id')) : new Product;
 
-        
         $product->id = $request->json('id')==="" ? NULL : $request->json('id'); 
-        $product->codigo = $request->json('codigo') ==="" ? NULL : $request->json('codigo');
         $product->nombre = $request->json('nombre') ==="" ? NULL : strtoupper($request->json('nombre'));
         $product->stock = $request->json('stock') ==="" ? NULL :  $request->json('stock');
         $product->stock_min = $request->json('stock_min') ==="" ? NULL : $request->json('stock_min');
         $product->p_costo = $request->json('p_costo') ==="" ? NULL : $request->json('p_costo');
         $product->p_costo_usd = $request->json('p_costo_usd') ==="" ? NULL : $request->json('p_costo_usd');
         $product->p_venta = $request->json('p_venta') ==="" ? NULL : $request->json('p_venta');
+        $product->p_venta = $request->json('p_venta_usd') ==="" ? NULL : $request->json('p_venta_usd');
         
         if($product->save()){
             return new ProductResource($product);
