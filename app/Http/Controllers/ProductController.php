@@ -41,7 +41,6 @@ class ProductController extends Controller
         $product->nombre = $request->json('nombre') ==="" ? NULL : strtoupper($request->json('nombre'));
         $product->stock = $request->json('stock') ==="" ? NULL :  $request->json('stock');
         $product->stock_min = $request->json('stock_min') ==="" ? NULL : $request->json('stock_min');
-        $product->p_costo = $request->json('p_costo') ==="" ? NULL : $request->json('p_costo');
         $product->p_costo_usd = $request->json('p_costo_usd') ==="" ? NULL : $request->json('p_costo_usd');
         $product->p_venta_usd = $request->json('p_venta_usd') ==="" ? NULL : $request->json('p_venta_usd');
         
